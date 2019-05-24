@@ -31,7 +31,7 @@ namespace atividadeHerança
         }
         protected float TransformPorcentagem(float valor)
         {
-            return valor *= 0.01f * 100f;
+            return valor *= 0.01f;
         }
     }
 }
