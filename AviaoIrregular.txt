@@ -1,0 +1,163 @@
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[][] aviao = new char[6][];
+            aviao[0] = new char[] { ' ','A', 'B', 'C', 'D', 'E', 'F' };
+            aviao[1] = new char[] { '1','L', 'O', 'O', 'L', 'O'};
+            aviao[2] = new char[] { '2','L', 'O', 'L' };
+            aviao[3] = new char[] { '3','L', 'O', 'L','L' };
+            aviao[4] = new char[] { '4','L', 'O', 'L', 'L', 'L' };
+            aviao[5] = new char[] { '5','L', 'O', 'L', 'L', 'L', 'O' };
+
+            char escolha1 = ' ';
+            while (escolha1 != 's')
+            {
+
+
+                for (int i = 0; i < aviao.Length; i++)
+                {
+                    for (int m = 0; m < aviao[i].Length; m++)
+                    {
+                        Console.Write("{0} ", aviao[i][m]);
+                    }
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine("escolha um assento pra reserva ou digite 's' para sair\n primeiramente a letra");
+                escolha1 = char.Parse(Console.ReadLine());
+                if (escolha1 == 's')
+                {
+                    Console.Clear();
+                    break;
+                }
+                Console.WriteLine("agora escolha o número do seu assento");
+                int escolha2 = int.Parse(Console.ReadLine());
+
+
+                for (int j = 0; j < aviao.Length; j++)
+                {
+                    if (j == escolha2)
+                    {
+                        for (int k = 0; k < aviao[j].Length; k++)
+                        {
+                            if (aviao[0][k] == escolha1)
+                            {
+                                if (aviao[j][k] == 'L')
+                                {
+                                    aviao[j][k] = 'O';
+                                    Console.WriteLine("seu assento foi reservado com sucesso!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("esse assento está ocupado");
+                                }
+                                Thread.Sleep(2000);
+                                Console.Clear();
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[][] aviao = new char[6][];
+            aviao[0] = new char[] { ' ','A', 'B', 'C', 'D', 'E', 'F' };
+            aviao[1] = new char[] { '1','L', 'O', 'O', 'L', 'O'};
+            aviao[2] = new char[] { '2','L', 'O', 'L' };
+            aviao[3] = new char[] { '3','L', 'O', 'L','L' };
+            aviao[4] = new char[] { '4','L', 'O', 'L', 'L', 'L' };
+            aviao[5] = new char[] { '5','L', 'O', 'L', 'L', 'L', 'O' };
+
+            char escolha1 = ' ';
+            while (escolha1 != 's')
+            {
+
+
+                for (int i = 0; i < aviao.Length; i++)
+                {
+                    for (int m = 0; m < aviao[i].Length; m++)
+                    {
+                        if (aviao[i][m] == 'L')
+                        {
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.Write("{0} ", aviao[i][m]);
+                        }
+                        else if (aviao[i][m] == 'O')
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("{0} ", aviao[i][m]);
+                        }
+                        else
+                        {
+                            Console.Write("{0} ", aviao[i][m]);
+                        }
+                    }
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine("escolha um assento pra reserva ou digite 's' para sair\n primeiramente a letra");
+                escolha1 = char.Parse(Console.ReadLine());
+                if (escolha1 == 's')
+                {
+                    Console.Clear();
+                    break;
+                }
+                Console.WriteLine("agora escolha o número do seu assento");
+                int escolha2 = int.Parse(Console.ReadLine());
+
+
+                for (int j = 0; j < aviao.Length; j++)
+                {
+                    if (j == escolha2)
+                    {
+                        for (int k = 0; k < aviao[j].Length; k++)
+                        {
+                            if (aviao[0][k] == escolha1)
+                            {
+                                if (aviao[j][k] == 'L')
+                                {
+                                    aviao[j][k] = 'O';
+                                    Console.WriteLine("seu assento foi reservado com sucesso!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("esse assento está ocupado");
+                                }
+                                Thread.Sleep(2000);
+                                Console.Clear();
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+
