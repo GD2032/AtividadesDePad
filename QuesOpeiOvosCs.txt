@@ -1,0 +1,13 @@
+        static void Ovos(){
+            int count = 0;
+            int n = int.Parse(Console.ReadLine());
+            int k = int.Parse(Console.ReadLine());
+            int n1 = n;
+
+            while(n - k > 0){
+                n = n - k;
+                count++;
+                n++;
+            }
+            Console.WriteLine(count + n1);
+        }
