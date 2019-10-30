@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication13
+{
+class Program
+{
+static void Main(string[] args)
+{
+bool pararExecucao = false;
+
+do
+{
+try
+{
+long N = 0;
+long fatorial = 0;
+long numero = 0;
+
+try
+{
+//Solicita que o usuário digite um número.
+
+Console.WriteLine("Digite um número natural não negativo:");
+numero = Int64.Parse(Console.ReadLine());
+
+if (numero < 0)
+{
+throw new Exception("Digite um número não negativo!");
+}
+
+//Caso seja digitado um caracter não númerico, retornará a mensagem.
+}
+catch (Exception)
+{
+Console.WriteLine("Digite um caracter válido|");
+Console.ReadLine();
+break;
+}
+
+//Caso digite um caracter número, retorna mensagem na tela.
+
+Console.WriteLine("Fatorial de " + numero.ToString() + "!");
+
+//Inicia valor de fatorial com Número.
+N = numero;
+fatorial = N;
+
+//Inicia decrementação de Número
+N--;
+
+//Faz o cálculo do Fatorial
+do
+{
+fatorial = fatorial * N;
+Console.WriteLine(N.ToString() + " -> " + fatorial.ToString("N"));
+N--;
+}
+while (N > 0);
+
+Console.WriteLine("Fatorial de " + numero.ToString() + "! = " + fatorial.ToString());
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+
+//Solicita ao usuário uma nova execução.
+
+Console.WriteLine("Executar novamente?(S|N)");
+pararExecucao = (Console.ReadLine().ToUpper() == "N");
+}
+catch (Exception ex)
+{
+Console.Write("Erro no fatorial!\n" + ex.Message);
+Console.ReadLine();
+}
+}
+
+//Para execução e fecha o programa.
+
+while (!pararExecucao);
+}
+}
+}
