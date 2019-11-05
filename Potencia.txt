@@ -1,0 +1,23 @@
+  static void potencia()
+        {
+            Thread.Sleep(2000);
+            Console.Clear();
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            Console.WriteLine("Potencia");
+            Console.WriteLine("Digite a base:");
+           int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o expoente:");
+           int b = int.Parse(Console.ReadLine());
+
+            int cont = 0;
+            int c = 1;
+            while (cont != b)
+            {
+                c *= a;
+                cont++;
+            }
