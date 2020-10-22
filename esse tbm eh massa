@@ -1,0 +1,21 @@
+  string novoPath = @"C:\Users\GAROTOS\Desktop\baguiMariele\pasta2";
+  string nome = "";
+  string newFile = "";
+
+  using (TextReader reader = new StreamReader(@"C:\Users\GAROTOS\Desktop\baguiMariele\files.txt")){
+      string file;
+      while ((file = reader.ReadLine()) != null){
+          if (File.Exists(file)){
+              nome = file.Split('\\')[file.Split('\\').Length - 1];
+              newFile = novoPath + "\\" + nome;
+              using (StreamWriter sw = File.CreateText(newFile)){
+                  using (TextReader rdr = new StreamReader(file)){
+                      string line;
+                      while ((line = rdr.ReadLine()) != null) { 
+                          sw.WriteLine(line);
+                      }
+                  }
+              }
+          }
+      }
+  }
